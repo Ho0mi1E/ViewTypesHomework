@@ -1,9 +1,8 @@
-package com.example.viewtypeshomework
+package com.example.viewtypeshomework.presentation.recyclers.out
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.viewtypeshomework.domain.model.server.*
-import com.example.viewtypeshomework.presentation.recyclers.out.*
 import java.lang.IllegalStateException
 
 class BasicAdapter : RecyclerView.Adapter<BasicItemViewHolder>() {

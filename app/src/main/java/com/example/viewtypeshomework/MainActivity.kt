@@ -2,6 +2,7 @@ package com.example.viewtypeshomework
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.viewtypeshomework.presentation.recyclers.out.BasicAdapter
 import com.example.viewtypeshomework.presentation.viewModel.InfoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 

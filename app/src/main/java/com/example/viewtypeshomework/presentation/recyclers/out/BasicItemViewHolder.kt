@@ -1,4 +1,4 @@
-package com.example.viewtypeshomework
+package com.example.viewtypeshomework.presentation.recyclers.out
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
