@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.viewtypeshomework.R
 import com.example.viewtypeshomework.domain.model.server.User
+import com.example.viewtypeshomework.domain.showInfo.LoadAndClickListener
 import kotlinx.android.synthetic.main.user_recycler.view.*
 
 class PeopleViewHolder(view: View) : CommonViewHolder(view) {

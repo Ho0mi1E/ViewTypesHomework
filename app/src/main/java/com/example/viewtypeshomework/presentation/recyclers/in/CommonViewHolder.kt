@@ -10,5 +10,5 @@ sealed class CommonViewHolder(val item: View) : RecyclerView.ViewHolder(item){
 
     abstract fun bindItem(item: User)
 
-    val btn by lazy { item.findViewById<ImageButton>(R.id.button) }
+    val btn: ImageButton by lazy { item.findViewById(R.id.button) }
 }

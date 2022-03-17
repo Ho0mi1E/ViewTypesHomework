@@ -7,10 +7,11 @@ import android.widget.Toast
 import com.example.viewtypeshomework.R
 import com.example.viewtypeshomework.domain.model.server.BasicItem
 import com.example.viewtypeshomework.domain.model.server.ToDo
+import com.example.viewtypeshomework.domain.showInfo.ShowInfo
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.item_todo.view.*
 
-class ToDoItemViewHolder(view: View) : BasicItemViewHolder(view) {
+class ToDoItemViewHolder(view: View) : BasicItemViewHolder(view), ShowInfo {
     companion object {
         const val VIEW_TYPE = 4
         fun newInstance(parent: ViewGroup) = ToDoItemViewHolder(
@@ -23,16 +24,24 @@ class ToDoItemViewHolder(view: View) : BasicItemViewHolder(view) {
     override fun bindItem(item: BasicItem) {
         (item as ToDo).apply {
             itemView.radioResearch.setOnClickListener {
-                Toast
-                    .makeText(it.context, RESEARCH, Toast.LENGTH_LONG)
-                    .show()
+                showToast()
             }
             itemView.radioDeffine.setOnClickListener {
-                Snackbar
-                    .make(it, DEFFINE, Snackbar.LENGTH_LONG)
-                    .setAction("Snackbar", null)
-                    .show()
+                showSnack()
             }
         }
+    }
+
+    override fun showToast() {
+        Toast
+            .makeText(itemView.context, ToDo.RESEARCH, Toast.LENGTH_LONG)
+            .show()
+    }
+
+    override fun showSnack() {
+        Snackbar
+            .make(itemView, ToDo.DEFFINE, Snackbar.LENGTH_LONG)
+            .setAction("Snackbar", null)
+            .show()
     }
 }

@@ -2,10 +2,12 @@ package com.example.viewtypeshomework.presentation.recyclers.out
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.viewtypeshomework.MainActivity
 import com.example.viewtypeshomework.domain.model.server.*
+import com.example.viewtypeshomework.domain.showInfo.LoadAndClickListener
 import java.lang.IllegalStateException
 
-class BasicAdapter : RecyclerView.Adapter<BasicItemViewHolder>() {
+class BasicAdapter(private val clickListener: LoadAndClickListener) : RecyclerView.Adapter<BasicItemViewHolder>() {
 
     private var list = emptyList<BasicItem>()
 
@@ -15,7 +17,7 @@ class BasicAdapter : RecyclerView.Adapter<BasicItemViewHolder>() {
             AttachmentsItemViewHolder.VIEW_TYPE -> AttachmentsItemViewHolder.newInstance(parent)
             DateItemViewHolder.VIEW_TYPE -> DateItemViewHolder.newInstance(parent)
             DescriptionItemViewHolder.VIEW_TYPE -> DescriptionItemViewHolder.newInstance(parent)
-            UserItemViewHolder.VIEW_TYPE -> UserItemViewHolder.newInstance(parent)
+            UserItemViewHolder.VIEW_TYPE -> UserItemViewHolder.newInstance(parent,clickListener)
             ToDoItemViewHolder.VIEW_TYPE -> ToDoItemViewHolder.newInstance(parent)
             else -> {
                 throw IllegalStateException("Wrong view holder type")
